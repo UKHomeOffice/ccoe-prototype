@@ -1,0 +1,175 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Home Office - Cloud Centre of Excellence
+{% endblock %}
+
+{% block header %}
+<!-- {% from "govuk/components/header/macro.njk" import govukHeader %} -->
+
+{{ govukHeader({
+  homepageUrl: "#",
+  serviceName: "Home Office - Cloud Centre of Excellence",
+  serviceUrl: "#",
+  navigation: [
+    {
+      href: "home",
+      text: "HO - CCoE",
+      active: true
+    },
+    {
+      href: "cloud_training",
+      text: "Cloud Training"
+    },
+    {
+      href: "cloud_guidance",
+      text: "Cloud Guidance"
+    },
+    {
+      href: "#4",
+      text: "Public Cloud Services"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "prototype"
+  },
+  html: 'This is not a live service – your <a class="govuk-link" href="#">feedback</a> is not yet required.'
+}) }}
+{% endblock %}
+
+{% block content %}
+{{ govukBreadcrumbs({
+  collapseOnMobile: true,
+  items: [
+    {
+      text: "Home",
+      href: "home"
+    }
+  ]
+}) }}
+
+<div class="govuk-width-container">
+
+  <main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 id="h1_title" class="govuk-heading-xl">Home Office - Cloud Centre of Excellence (HO-CCoE)</h1>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <aside class="app-related-items" role="complementary">
+          <h2 class="govuk-heading-m" id="subsection-title">
+            Page content
+          </h2>
+          <nav id="nav" role="navigation" aria-labelledby="subsection-title">
+            <ul class="govuk-list govuk-!-font-size-16">
+              <li>
+                <a href="#service_overview">
+                  Service overview
+                </a>
+              </li>
+              <li>
+                <a href="#getting_in_touch">
+                  Getting in touch
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+      </div>
+    </div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <img src="./public/images/turtle_sticker.svg" alt="Public Cloud Team Logo">
+      </div>
+      <div class="govuk-grid-column-two-thirds">
+        <p class="govuk-body-l govuk-main-wrapper--auto-spacing">This service has been created by the Public Cloud Team (PCT)
+          and it is replacing the Public Cloud confluence area.
+          The HO-CCoE has been designed to support Home Office employees that use or have an interest in the
+          cloud.</p>
+      </div>
+    </div>
+
+    <h2 id="service_overview" class="govuk-heading-l">Service overview</h2>
+    <p class="govuk-body">The main sections of the service include:</p>
+    <h3 class="govuk-heading-m">Cloud training</h3>
+    <p class="govuk-body">This section of the service shows the <a href="cloud_training.html" class="govuk-link">cloud training available</a> and how
+      to
+      book training. It also has a breakdown of Amazon Web Services (AWS) and Microsoft Azure’s training and
+      certification pathways.</p>
+
+    <h3 class="govuk-heading-m">Cloud guidance</h3>
+    <p class="govuk-body">This section of the service has Home Office <a href="cloud_guidance.html" class="govuk-link">cloud related guidance</a>. We
+      divided the guidance in to ‘The Five Pillars of the Well-Architected Framework’ from AWS and Azure best
+      practice guidance.</p>
+
+    <h3 class="govuk-heading-m">Cloud services</h3>
+    <p class="govuk-body">This section of the service shows the <a href="public_cloud_services.html" class="govuk-link">different services</a> that the
+      Public
+      Cloud Team offers. This includes AWS IAM which shows you how to get started in AWS and how to modify your
+      existing account cloud account.</p>
+
+      <!-- Hidden back to nav link </a> -->
+      <a href="#nav" class="govuk-skip-link">Back to start of navigation tree</a>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <h2 id="getting_in_touch" class="govuk-heading-l">Getting in touch</h2>
+    <p class="govuk-body">The Public Cloud Team are an agile team based in Manchester and Croydon. Our roles in the Home Office
+      include:</p>
+    <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+      <li>Governing the use of cloud across the department.</li>
+      <li>Enabling teams to access the cloud and ensure that cloud accounts are secured and monitored.</li>
+      <li>Provide support and guidance to make better use of public cloud services from our cloud providers, AWS
+        &
+        Azure.</li>
+    </ul>
+
+    <p class="govuk-body">This is a live service, and we will be updating and improving the service regularly. For any other
+      queries
+      or support you need that hasn’t been included on this service please contact: <a
+        href="mailto:public.cloud@homeoffice.gov.uk">public.cloud@homeoffice.gov.uk</a></p>
+
+        <a href="#h1_title" class="govuk-link">Back to top</a>
+
+  </main>
+  
+</div>
+{% endblock %}
+
+{% block footer %}
+
+{{ govukFooter({
+  navigation: [
+    {
+      title: "Service index",
+      columns: 2,
+      items: [
+        {
+          href: "home",
+          text: "HO - CCoE"
+        },
+        {
+          href: "cloud_training",
+          text: "Cloud Training"
+        },
+        {
+          href: "cloud_guidance",
+          text: "Cloud Guidance"
+        },
+        {
+          href: "#4",
+          text: "Public Cloud Services"
+        }
+      ]
+    }
+  ]
+}) }}
+
+{% endblock %}
